@@ -1,2 +1,1 @@
-# socsoft
-Software for hsg soc
+Patpedhi Software
