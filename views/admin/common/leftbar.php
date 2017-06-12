@@ -45,7 +45,8 @@
                 </li>
                 <li><a><i class="fa fa-desktop"></i> Deposits <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="general_elements.html">RD (Recurring Deposits)</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/">RD (Recurring Deposits)</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/add">New RD Entry</a></li>
                     
                   </ul>
                 </li>
