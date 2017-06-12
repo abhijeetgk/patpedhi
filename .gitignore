@@ -1,0 +1,7 @@
+.settings
+*.buildpath
+*.project
+*.csv
+*.sql
+/logs/log-2017-06-09.txt
+/logs/log-2017-06-09.php
