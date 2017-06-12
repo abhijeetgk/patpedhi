@@ -8,12 +8,12 @@ session_start ();
  * ================================================================
  * Custom MVC sturucture index file.
  *
- * @package Moneycontrol
- * @category Login
+ * @package Patpedhi
+ *
  * @author Abhijeet Kinjawadekar
  * @version 1.0
  */
-error_reporting ( 0 );
+error_reporting ( E_ALL );
 /**
  * ===============================================
  * Base MVC files include
