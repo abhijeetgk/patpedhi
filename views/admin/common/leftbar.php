@@ -45,20 +45,20 @@
                 </li>
                 <li><a><i class="fa fa-desktop"></i> Deposits <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo BASE_URL;?>rd/">RD (Recurring Deposits)</a></li>
-                    <li><a href="<?php echo BASE_URL;?>rd/add">New RD Entry</a></li>
+                    <li><a href="#">RD (Recurring Deposits)</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/add">New RD Account Entry</a></li>
+                    <li><a href="#">New RD Record</a></li>
                     
                   </ul>
                 </li>
-               <!--  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> Reports <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="tables.html">Tables</a>
+                    <li><a href="#">RD Reports</a>
                     </li>
-                    <li><a href="tables_dynamic.html">Table Dynamic</a>
-                    </li>
+                    
                   </ul>
                 </li> 
-                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                <!--<li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="chartjs.html">Chart JS</a>
                     </li>
