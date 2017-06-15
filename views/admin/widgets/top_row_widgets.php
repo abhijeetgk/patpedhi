@@ -5,8 +5,8 @@
                 </div>
                 <div class="count">39</div>
 
-                <h3>New RDs open</h3>
-                <p>New Rds in current month</p>
+                <h3><?php echo NEW_RD_OPEN;?></h3>
+                <p><?php echo NEW_RD_CURRENT_MONTH;?></p>
               </div>
             </div>
             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -15,8 +15,8 @@
                 </div>
                 <div class="count">&#8377; 1,79,000</div>
 
-                <h3>Total amount received.</h3>
-                <p>Total Deposits in RD in current month.</p>
+                <h3><?php echo TOTAL_DEPOSITS;?></h3>
+                <p><?php echo TOTAL_DEPOSITS_IN_RD_CURRENT_MONTH;?></p>
               </div>
             </div>
             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -25,8 +25,8 @@
                 </div>
                   <div class="count"><a href="<?php echo BASE_URL;?>customer/manage">29</a></div>
 
-                  <h3><a href="<?php echo BASE_URL;?>customer/manage">New customers</a></h3>
-                <p>New customers in current month</p>
+                  <h3><a href="<?php echo BASE_URL;?>customer/manage"><?php echo NEW_CUSTOMER;?></a></h3>
+                <p><?php echo NEW_CUSTOMERS_IN_CURRENT_MONTH;?></p>
               </div>
             </div>
 <!--            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">

@@ -112,10 +112,15 @@ class Loader {
                 if (method_exists($this->controllerClass, $this->action)) {
                     $this->obj_load = new Load();
                     $lang = filter_input(INPUT_GET, 'lang', FILTER_SANITIZE_STRING);
+                    
                     if (!$lang)
                         $lang = filter_input(INPUT_POST, 'lang', FILTER_SANITIZE_STRING);
+                    if($lang!=""){
+                        setcookie("lang",$lang,time()+3600,'/');
+                    }
+                    if(isset($_COOKIE['lang'])&& $_COOKIE['lang']!='' && $lang=="")$lang=$_COOKIE['lang'];
                     if (!$lang)
-                        $lang = "en";
+                        $lang = DEFAULT_LANG;
                     $this->registry = $GLOBALS['registry_obj'];
                     $this->registry->set('lang', $lang);
                     return new $this->controllerClass($this->action, $this->urlValues, $this->obj_load, $this->registry);

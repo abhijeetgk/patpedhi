@@ -2,7 +2,7 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Patpedhi Admin</span></a>
+            <a href="<?php echo BASE_URL;?>adminhome" class="site_title"><i class="fa fa-paw"></i> <span><?php echo SITENAME;?></span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -14,7 +14,7 @@
             </div>
             <div class="profile_info">
               <span><?php echo WELCOME_MSG;?>,</span>
-              <h2>Patpedhi Admin</h2>
+              <h2><?php echo ADMIN_NAME;?></h2>
             </div>
           </div>
           <!-- /menu prile quick info -->
@@ -23,13 +23,13 @@
 
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
+              <h3>&nbsp;</h3>
             <div class="menu_section">
-              <h3>General</h3>
+              <h3></h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-home"></i> <?php echo HOME;?> <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo BASE_URL;?>">Dashboard</a>
+                    <li><a href="<?php echo BASE_URL;?>adminhome"><?php echo DASHBOARD;?></a>
                     </li>
                     <!-- <li><a href="index2.html">Dashboard2</a>
                     </li>
@@ -37,23 +37,23 @@
                     </li> -->
                   </ul>
                 </li>
-                <li><a><i class="fa fa-edit"></i> Customer <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i> <?php echo CUSTOMER;?> <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo BASE_URL;?>customer/manage">Manage Customers (Add/Edit/Delete)</a></li>
-                    <li><a href="<?php echo BASE_URL;?>customer/add">Add New Customer</a></li>
+                    <li><a href="<?php echo BASE_URL;?>customer/manage"><?php echo MANAGE_CUSTOMER;?></a></li>
+                    <li><a href="<?php echo BASE_URL;?>customer/add"><?php echo ADD_NEW_CUSTOMER;?></a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-desktop"></i> Deposits <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-desktop"></i> <?php echo DEPOSITS;?> <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo BASE_URL;?>rd/report">RD (Recurring Deposits)</a></li>
-                    <li><a href="<?php echo BASE_URL;?>rd/addmaster">New RD Account Entry</a></li>
-                    <li><a href="<?php echo BASE_URL;?>rd/addrecord">New RD Record</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/report"><?php echo RECURRING_DEPOSITS;?></a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/addmaster"><?php echo NEW_RD_ACCOUNT_ENTRY;?></a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/addrecord"><?php echo NEW_RD_ACCOUNT_RECORD;?></a></li>
                     
                   </ul>
                 </li>
-                <li><a><i class="fa fa-table"></i> Reports <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> <?php echo REPORTS;?> <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo BASE_URL;?>rd/report">RD Reports</a>
+                    <li><a href="<?php echo BASE_URL;?>rd/report"><?php echo RD_REPORTS;?></a>
                     </li>
                     
                   </ul>
