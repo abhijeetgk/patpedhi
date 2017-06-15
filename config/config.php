@@ -21,14 +21,6 @@ $mysql_config = array(
     )
 );
 
-$redis_clusture_ips = array(
-    'tcp://172.18.32.161:6379',
-    'tcp://172.18.32.162:6379',
-    'tcp://172.18.32.163:6379',
-    'tcp://172.18.32.164:6379',
-    'tcp://172.18.32.165:6379',
-    'tcp://172.18.32.166:6379',
-);
 
 $mysql_restricted_keywords = array(
     'execute', 'select', 'insert', 'update', 'delete', 'create', 'alter', 'drop', 'rename', 'truncate', 'backup', 'restore',

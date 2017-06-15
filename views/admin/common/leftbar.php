@@ -29,7 +29,7 @@
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="index.html">Dashboard</a>
+                    <li><a href="<?php echo BASE_URL;?>">Dashboard</a>
                     </li>
                     <!-- <li><a href="index2.html">Dashboard2</a>
                     </li>
@@ -40,20 +40,20 @@
                 <li><a><i class="fa fa-edit"></i> Customer <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo BASE_URL;?>customer/manage">Manage Customers (Add/Edit/Delete)</a></li>
-                    <li><a href="<?php echo BASE_URL;?>customer/">Add New Customer</a></li>
+                    <li><a href="<?php echo BASE_URL;?>customer/add">Add New Customer</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-desktop"></i> Deposits <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="#">RD (Recurring Deposits)</a></li>
-                    <li><a href="<?php echo BASE_URL;?>rd/add">New RD Account Entry</a></li>
-                    <li><a href="#">New RD Record</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/report">RD (Recurring Deposits)</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/addmaster">New RD Account Entry</a></li>
+                    <li><a href="<?php echo BASE_URL;?>rd/addrecord">New RD Record</a></li>
                     
                   </ul>
                 </li>
                 <li><a><i class="fa fa-table"></i> Reports <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="#">RD Reports</a>
+                    <li><a href="<?php echo BASE_URL;?>rd/report">RD Reports</a>
                     </li>
                     
                   </ul>
@@ -125,7 +125,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
               <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a> -->
-            <a data-toggle="tooltip" data-placement="top" title="Logout">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="/">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
           </div>

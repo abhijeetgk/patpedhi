@@ -36,7 +36,7 @@
         <div class="">
 
          <?php echo $data['admin_home_widgets']; ?>
-		 <div class="row">
+<!--		 <div class="row">
             <div class="col-md-4">
               <div class="x_panel">
                 <div class="x_title">
@@ -264,7 +264,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
 
        <?php echo $data['footer'];?>

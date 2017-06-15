@@ -1,6 +1,7 @@
 <?php
-ob_start ();
-session_start ();
+
+ob_start();
+session_start();
 /**
  * Custom MVC stucture base index file
  * ================================================================
@@ -13,7 +14,7 @@ session_start ();
  * @author Abhijeet Kinjawadekar
  * @version 1.0
  */
-error_reporting ( E_ALL );
+error_reporting(E_ALL);
 /**
  * ===============================================
  * Base MVC files include
@@ -28,34 +29,33 @@ require ("classes/load.php");
 require ("config/constants.php"); // common global constants file
 require ("config/config.php"); // common global config file
 require ("classes/registry.php");
-$registry_obj= new Registry();
+$registry_obj = new Registry();
 //require "language/en/user.php";
 $loader = new Loader (); // create the loader object
-if (isset ( $_GET ['q'] )) {
-	$q = $_GET ['q'];
-	$q_arr = explode ( "/", $q );
-	$controller = $q_arr [0];
-	// controller specific config and constants file include startf
-	$constants_file = "config/" . $controller . "_constants.php";
-	if (file_exists ( $constants_file )) {
-		require_once ($constants_file);
-	}
-	
-	$config_file = "config/" . $controller . "_config.php";
-	if (file_exists ( $config_file )) {
-		require_once ($config_file);
-	}
+if (isset($_GET ['q'])) {
+    $q = $_GET ['q'];
+    $q_arr = explode("/", $q);
+    $controller = $q_arr [0];
+    // controller specific config and constants file include startf
+    $constants_file = "config/" . $controller . "_constants.php";
+    if (file_exists($constants_file)) {
+        require_once ($constants_file);
+    }
+
+    $config_file = "config/" . $controller . "_config.php";
+    if (file_exists($config_file)) {
+        require_once ($config_file);
+    }
 }
 /**
  * ====================================================
  * Loader object,controller class initialization
  * ====================================================
  */
-
-$controller = $loader->createController (); // creates the requested controller object based on the 'controller' URL value
+$controller = $loader->createController(); // creates the requested controller object based on the 'controller' URL value
 $controller->load = new Load ();
-$controller->registry=new Registry();
-$controller->executeAction (); // execute the requested controller's requested method based on the 'action' URL value. Controller methods output a View.
+$controller->registry = new Registry();
+$controller->executeAction(); // execute the requested controller's requested method based on the 'action' URL value. Controller methods output a View.
 
 /**
  * ===========================
