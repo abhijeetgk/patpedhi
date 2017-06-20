@@ -24,10 +24,10 @@ class Loader {
         global $mysql_restricted_keywords;
         if (!$str)
             return;
-        $pattern = '/\b(' . implode("|", $mysql_restricted_keywords) . ')\b/i';
-        $str = preg_replace($pattern, '', $str); // remove mysql characters
-        $str = preg_replace('~[\\\#$%+�"\'&><=*]~', '', $str); // remove special characters
-        $str = preg_replace("/-{2,}/", "-", $str); // transforms multiple --- in - use to comment in sql scripts
+//        $pattern = '/\b(' . implode("|", $mysql_restricted_keywords) . ')\b/i';
+//        $str = preg_replace($pattern, '', $str); // remove mysql characters
+//        $str = preg_replace('~[\\\#$%+�"\'&><=*]~', '', $str); // remove special characters
+//        $str = preg_replace("/-{2,}/", "-", $str); // transforms multiple --- in - use to comment in sql scripts
         return $str;
     }
 

@@ -7,17 +7,17 @@ $autoload['config'] = array();
  * ================================================= 
  */
 $mysql_config = array(
-    "user_read" => array(
-        "db_host" => "172.18.32.112",
-        "db_name" => "moneycontrol",
-        "db_user" => "portdev_read",
-        "db_pass" => "sdf#2d#4@"
+    "conn_read" => array(
+        "db_host" => "localhost",
+        "db_name" => "patpedhi",
+        "db_user" => "root",
+        "db_pass" => "root.123"
     ),
-    "user_write" => array(
-        "db_host" => "172.18.32.112",
-        "db_name" => "moneycontrol",
-        "db_user" => "portdev_write",
-        "db_pass" => "sdf#2d#4@"
+    "conn_write" => array(
+        "db_host" => "localhost",
+        "db_name" => "patpedhi",
+        "db_user" => "root",
+        "db_pass" => "root.123"
     )
 );
 

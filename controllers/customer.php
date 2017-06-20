@@ -15,6 +15,8 @@ class CustomerController extends BaseController {
         $this->load = $obj_load;
         $this->_registry = $registry;
         $this->load->language('admin');
+        $this->user_model=$this->load->model('user');
+//        var_dump($this->user_model);
     }
 
     public function _set_data() {
@@ -28,12 +30,16 @@ class CustomerController extends BaseController {
         $this->view->set_data('topbar_profile_dropdown', $topbar_profile_dropdown);
         $this->view->set_data('email_dropdown', $email_dropdown);
         $this->view->set_data('footer', $footer);
+        
     }
     public function index(){
         header('Location:'.BASE_URL."customer/manage");
     }
     public function add() {
         $this->_set_data();
+        if(isset($_POST['fname']) && $_POST['fname']!=""){
+            $this->user_model->register_customer($_POST);
+        }
         $this->view->set_data('customer_form', $this->view->render_return('admin/customer/customer_form'));
 
         $this->view->render("admin/customer/index");

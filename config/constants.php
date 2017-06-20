@@ -21,3 +21,6 @@ define('ASSETS_PATH', 'http://' . $_SERVER['HTTP_HOST'] . '/assets/');
 define('CSS_PATH', ASSETS_PATH . "css/");
 define('JS_PATH', ASSETS_PATH . "js/");
 define('IMAGES_PATH', ASSETS_PATH . "images/");
+
+// paging parameters
+define('DEFAULT_CUSTOMER_LIMIT',10);

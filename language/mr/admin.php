@@ -26,6 +26,9 @@ define('TOTAL_DEPOSITS_IN_RD_CURRENT_MONTH','चालू माह में �
 define('NEW_CUSTOMER','नए ग्राहक');
 define('NEW_CUSTOMERS_IN_CURRENT_MONTH','चालू माह में नए ग्राहक');
 
+// new customer form
+
+// end new customer form
 /**
  * End of file ./language/en/user.php
  */
