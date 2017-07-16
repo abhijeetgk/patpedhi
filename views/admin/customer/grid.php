@@ -1,20 +1,15 @@
 <!-- Bootstrap core CSS -->
-
 <link href="<?php echo CSS_PATH; ?>bootstrap.min.css" rel="stylesheet">
-
 <link href="<?php echo ASSETS_PATH; ?>css/font-awesome.min.css" rel="stylesheet">
 <link href="<?php echo CSS_PATH; ?>animate.min.css" rel="stylesheet">
-
 <!-- Custom styling plus plugins -->
 <link href="<?php echo CSS_PATH; ?>custom.css" rel="stylesheet">
 <link href="<?php echo CSS_PATH; ?>icheck/flat/green.css" rel="stylesheet">
-
 <link href="<?php echo JS_PATH; ?>datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo JS_PATH; ?>datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo JS_PATH; ?>datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo JS_PATH; ?>datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo JS_PATH; ?>datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
-
 <script src="<?php echo JS_PATH; ?>jquery.min.js"></script>
 
 <!--[if lt IE 9]>
@@ -30,7 +25,6 @@
     <div class="x_panel">
         <div class="x_title">
             <h2>Customers</h2>
-
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
