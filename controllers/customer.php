@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Customer controller
  */
@@ -15,7 +16,7 @@ class CustomerController extends BaseController {
         $this->load = $obj_load;
         $this->_registry = $registry;
         $this->load->language('admin');
-        $this->user_model=$this->load->model('user');
+        $this->user_model = $this->load->model('user');
 //        var_dump($this->user_model);
     }
 
@@ -30,14 +31,15 @@ class CustomerController extends BaseController {
         $this->view->set_data('topbar_profile_dropdown', $topbar_profile_dropdown);
         $this->view->set_data('email_dropdown', $email_dropdown);
         $this->view->set_data('footer', $footer);
-        
     }
-    public function index(){
-        header('Location:'.BASE_URL."customer/manage");
+
+    public function index() {
+        header('Location:' . BASE_URL . "customer/manage");
     }
+
     public function add() {
         $this->_set_data();
-        if(isset($_POST['fname']) && $_POST['fname']!=""){
+        if (isset($_POST['fname']) && $_POST['fname'] != "") {
             $this->user_model->register_customer($_POST);
         }
         $this->view->set_data('customer_form', $this->view->render_return('admin/customer/customer_form'));
@@ -47,8 +49,10 @@ class CustomerController extends BaseController {
 
     public function manage() {
         $this->_set_data();
+        $this->view->set_data('identifier', 'customer');
+        $this->view->set_data('table_header', 'CUSTOMER');
+        $this->view->set_data('header_fields', array(TABLE_HEADER_ID,TABLE_HEADER_NAME, TABLE_HEADER_ADDRESS1, TABLE_HEADER_ADDRESS2, TABLE_HEADER_CITY,EDIT_BUTTON));
         $this->view->set_data('customer_grid', $this->view->render_return('admin/customer/grid'));
-
         $this->view->render("admin/customer/manage");
     }
 

@@ -322,3 +322,17 @@ if (typeof NProgress != 'undefined') {
         NProgress.done();
     });
 }
+// custom function starts
+function validate_admin_login(){
+    username=$('#adminusername').val();
+    password=$('#adminpassword').val();
+    if(username==""){
+        alert('Enter admin username');
+        return false;
+    }
+    if(password==""){
+        alert('Enter admin password');
+        return false;
+    }
+    $('#loginform').submit();
+}

@@ -24,28 +24,22 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Customers</h2>
+            <h2><?php echo $data['table_header']; ?></h2>
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
 
-            <table id="customer_table" class="table table-striped table-bordered">
+            <table id="<?php echo $data['identifier']; ?>_table" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Address 1</th>
-                        <th>Address 2</th>
-                        <th>City</th>
+                        <?php foreach ($data['header_fields'] as $field) { ?>
+                            <th><?php echo $field; ?></th>
+                        <?php } ?>
+
+
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Name</th>
-                        <th>Address 1</th>
-                        <th>Address 2</th>
-                        <th>City</th>
-                    </tr>
-                </tfoot>
+
             </table>
         </div>
     </div>
@@ -110,11 +104,26 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#customer_table').DataTable({
+        var table = $('#<?php echo $data['identifier']; ?>_table').DataTable({
             "processing": true,
             "serverSide": true,
-            "ajax": "/ajax/customer/"
+            "ajax": "/ajax/customer/",
+            "columnDefs": [{
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button class='button-info'>Edit</button>"
+                },
+                {
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                },
+            ]
         });
+        var table1 = $('#<?php echo $data['identifier']; ?>_table').DataTable();
+        $('#<?php echo $data['identifier']; ?>_table tbody').on('click', 'td .button-info', function () {
+            alert(table.row($(this).closest('tr').index()).data()[0]);
 
+        });
     });
 </script>

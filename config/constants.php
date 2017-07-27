@@ -3,12 +3,12 @@
 /**
  * Global Constants file
  */
-define('DEFAULT_LANG', 'mr');
+define('DEFAULT_LANG', 'en');
 define('DB_HOST', '');
 define('DB_USER', '');
 define('DB_PASSWORD', '');
 define('DB_NAME', '');
-define('SITE_NAME', 'Patpedhi Software');
+define('SITE_NAME', 'Patpedhi');
 if ($_SERVER['HTTP_HOST'] == 'patpedhi') {
     define('BASE_URL', 'http://patpedhi/');
 }

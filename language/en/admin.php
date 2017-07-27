@@ -26,6 +26,15 @@ define('TOTAL_DEPOSITS_IN_RD_CURRENT_MONTH','Total Deposits in Current month');
 define('NEW_CUSTOMER','New Customers');
 define('NEW_CUSTOMERS_IN_CURRENT_MONTH','New customers in current month');
 
+
+// customer grid columns
+define('TABLE_HEADER_ID','ID');
+define('TABLE_HEADER_NAME','Name');
+define('TABLE_HEADER_ADDRESS1','Address 1');
+define('TABLE_HEADER_ADDRESS2','Address 2');
+define('TABLE_HEADER_CITY','City');
+define('EDIT_BUTTON','Edit');
+
 /**
  * End of file ./language/en/user.php
  */

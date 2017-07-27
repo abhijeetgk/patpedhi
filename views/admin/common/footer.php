@@ -31,7 +31,7 @@
   <script type="text/javascript" src="<?php echo JS_PATH;?>moment/moment.min.js"></script>
   <script type="text/javascript" src="<?php echo JS_PATH;?>datepicker/daterangepicker.js"></script>
   <!-- chart js -->
-  <script src="<?php echo JS_PATH;?>chartjs/chart.min.js"></script>
+  <!--<script src="<?php // echo JS_PATH;?>chartjs/chart.min.js"></script>-->
   <!-- sparkline -->
   <script src="<?php echo JS_PATH;?>sparkline/jquery.sparkline.min.js"></script>
 
@@ -51,7 +51,7 @@
   <!-- pace -->
   <script src="<?php echo JS_PATH;?>pace/pace.min.js"></script>
   <!-- flot -->
-  <script type="text/javascript">
+<?php /*  <script type="text/javascript">
     //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
     var chartColours = ['#96CA59', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'];
 
@@ -153,7 +153,7 @@
       // }], options);
     });
   </script>
-  <!-- /flot -->
+  <!-- /flot -->  
   <!--  -->
   <script>
     $('document').ready(function() {
@@ -312,7 +312,7 @@
     });
   </script>
   <!-- -->
-  <!-- datepicker -->
+  <!-- datepicker -->*/ ?>
   <script type="text/javascript">
     $(document).ready(function() {
 
