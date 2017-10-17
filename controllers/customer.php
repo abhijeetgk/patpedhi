@@ -52,6 +52,8 @@ class CustomerController extends BaseController {
         $this->view->set_data('identifier', 'customer');
         $this->view->set_data('table_header', 'CUSTOMER');
         $this->view->set_data('header_fields', array(TABLE_HEADER_ID,TABLE_HEADER_NAME, TABLE_HEADER_ADDRESS1, TABLE_HEADER_ADDRESS2, TABLE_HEADER_CITY,EDIT_BUTTON));
+        $this->view->set_data('edit_url','/ajax/editcustomer');
+        $this->view->set_data('list_url','/ajax/customer');
         $this->view->set_data('customer_grid', $this->view->render_return('admin/customer/grid'));
         $this->view->render("admin/customer/manage");
     }
