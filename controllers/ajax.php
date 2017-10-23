@@ -24,14 +24,17 @@ class ajaxController extends BaseController {
         $this->view->set_format("json");
 //        var_dump($this->user_model);
     }
-    
-    public function customer(){
-        $params=$_GET;
-        $customer_data=$this->user_model->get_customer_data(array("params"=>$params));
+
+    public function customer() {
+        $params = $_GET;
+        $customer_data = $this->user_model->get_customer_data(array("params" => $params));
         //$return_data['data']=$customer_data['data'];
         echo json_encode($customer_data);
-        
-        
-        }
+    }
+    public function customer_id_autocomplete(){
+        $search_string=$_REQUEST['term'];
+        $customer_data=$this->user_model->get_customer_autocomplete(['fname'=>$search_string]);
+        print json_encode($customer_data);
+    }
 
 }

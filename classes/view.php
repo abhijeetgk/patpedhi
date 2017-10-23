@@ -59,6 +59,7 @@ class View {
     public function render($viewfile) {
         if (file_exists("views/" . $viewfile . ".php")) {
             $data = $this->data;
+            extract($data);
             if (isset($this->format) && $this->format != "") {
                 $format = $this->format;
             }else {
@@ -86,6 +87,7 @@ class View {
         if (file_exists("views/" . $viewfile . ".php")) {
             ob_start();
             $data = $this->data;
+            extract($data);
             require "views/" . $viewfile . ".php";
             $html = ob_get_contents();
             ob_end_clean();

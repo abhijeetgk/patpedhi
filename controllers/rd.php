@@ -30,6 +30,9 @@ class RdController extends BaseController {
 
     public function addmaster() {
         $this->_set_data();
+        if(isset($_POST['customer_id']) && $_POST['customer_id']!=""){
+//            $this-
+        }
         $this->view->set_data('rd_form', $this->view->render_return('admin/rd/form'));
         $this->view->render("admin/rd/index");
     }

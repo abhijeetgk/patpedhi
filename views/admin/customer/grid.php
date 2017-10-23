@@ -126,7 +126,7 @@
             var id=table.row($(this).closest('tr').index()).data()[0];
             $('#grid').hide();
             $('#editgrid').show();
-            $('#editgrid').html('test '+id);
+            $('#editgrid').load('<?php echo BASE_URL."customer/edit/";?>'+id);
         });
     });
 </script>

@@ -1,4 +1,5 @@
 <?php
+
 class AdminHomeController extends BaseController {
 
     private $_getparam;
@@ -15,21 +16,21 @@ class AdminHomeController extends BaseController {
     }
 
     public function index() {
-        $header=$this->view->render_return('admin/common/header');
-        $leftbar=$this->view->render_return('admin/common/leftbar');
-        $topbar_profile_dropdown=$this->view->render_return('admin/common/topbar_profile_dropdown');
-        $email_dropdown=$this->view->render_return('admin/common/email_dropdown');
-        $admin_home_widgets=$this->view->render_return('admin/widgets/top_row_widgets');
-        $footer=$this->view->render_return('admin/common/footer');
-        $this->view->set_data('header',$header);
-        $this->view->set_data('leftbar',$leftbar);
-        $this->view->set_data('topbar_profile_dropdown',$topbar_profile_dropdown);
-        $this->view->set_data('email_dropdown',$email_dropdown);
-        $this->view->set_data('admin_home_widgets',$admin_home_widgets);
-        $this->view->set_data('footer',$footer);
+        $header = $this->view->render_return('admin/common/header');
+        $leftbar = $this->view->render_return('admin/common/leftbar');
+        $topbar_profile_dropdown = $this->view->render_return('admin/common/topbar_profile_dropdown');
+        $email_dropdown = $this->view->render_return('admin/common/email_dropdown');
+        $admin_home_widgets = $this->view->render_return('admin/widgets/top_row_widgets');
+        $footer = $this->view->render_return('admin/common/footer');
+        $this->view->set_data('header', $header);
+        $this->view->set_data('leftbar', $leftbar);
+        $this->view->set_data('topbar_profile_dropdown', $topbar_profile_dropdown);
+        $this->view->set_data('email_dropdown', $email_dropdown);
+        $this->view->set_data('admin_home_widgets', $admin_home_widgets);
+        $this->view->set_data('footer', $footer);
         $this->view->render("admin/index");
     }
-    
+
     public function dbconnect() {
         $this->database = $this->load->library('DB', $GLOBALS ['mysql_config'] ['user_read']);
         var_dump($this->database);

@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 /**
  * Custom MVC stucture base index file

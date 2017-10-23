@@ -63,7 +63,7 @@ class User_model extends BaseModel {
         // order
         if (isset($input['order'][0]['column']) && $input['order'][0]['column'] != "") {
             $order = $input['order'][0]['column'];
-            $order_dir=$input['order'][0]['dir'];
+            $order_dir = $input['order'][0]['dir'];
             switch ($order) {
                 case 0:
                     $order_by = "fname";
@@ -79,10 +79,10 @@ class User_model extends BaseModel {
                     break;
             }
         }
-        
+
         $this->_database = $this->load->library('DB', $GLOBALS['mysql_config']['conn_read']);
         $sql = "SELECT id,fname,address1,address2,city FROM customer_master WHERE status='y' " . $search_query . " "
-                . "order by ".$order_by." ".$order_dir." limit ".$start.",".$limit;
+                . "order by " . $order_by . " " . $order_dir . " limit " . $start . "," . $limit;
         $sql_count = "SELECT count(1) as count from customer_master";
 //        echo $start . "=>" . $limit;
         $stmt = DB_library::$conn->prepare($sql);
@@ -97,9 +97,77 @@ class User_model extends BaseModel {
 //        $return_array['draw'] = 1;
         $return_array['recordsFiltered'] = $data1['data'][0]['count'];
         foreach ($data['data'] as $key => $value) {
-            $return_array['data'][] = array($value['id'],$value['fname'], $value['address1'], $value['address2'], $value['city']);
+            $return_array['data'][] = array($value['id'], $value['fname'], $value['address1'], $value['address2'], $value['city']);
         }
         return $return_array;
+    }
+
+    public function get_customer_autocomplete($input) {
+        $name = $input['fname'];
+        $this->_database = $this->load->library('DB', $GLOBALS['mysql_config']['conn_read']);
+        $sql = "SELECT id,CONCAT (fname,' ',mname,' ',lname) as cname from customer_master where fname like '%" . $name . "%'";
+        $stmt = DB_library::$conn->prepare($sql);
+        $data = $this->_database->get_data($stmt);
+        $this->_database->disconnect();
+        if ($data['count'] > 0) {
+            foreach($data['data'] as $key=>$value){
+                $result[]=array('id'=>$value['id'],'name'=>$value['cname']);
+            }
+            return $result;
+        }
+        else {
+            return array();
+        }
+    }
+
+    public function get_customer_details_by_id($customer_id) {
+        if (!$customer_id) {
+            return false;
+        }
+        $this->_database = $this->load->library('DB', $GLOBALS['mysql_config']['conn_read']);
+        $sql = "SELECT id,fname,mname,lname,address1,address2,city,state,country,pincode,description from customer_master where id=:id";
+        $stmt = DB_library::$conn->prepare($sql);
+        $stmt->bindParam(':id', $customer_id, PDO::PARAM_INT);
+        $data = $this->_database->get_data($stmt);
+        $this->_database->disconnect();
+        if ($data['count'] > 0) {
+            return $data;
+        }
+    }
+
+    public function update_customer_by_id($input) {
+        if (sizeof($input) == 0) {
+            return false;
+        }
+        $updatestring = "";
+        extract($input);
+        $this->_database = $this->load->library('DB', $GLOBALS['mysql_config']['conn_write']);
+        $sql = "UPDATE customer_master SET "
+                . "fname=:fname,"
+                . "mname=:mname,"
+                . "lname=:lname,"
+                . "address1=:address1,"
+                . "address2=:address2,"
+                . "city=:city,"
+                . "state=:state,"
+                . "country=:country,"
+                . "pincode=:pincode,"
+                . "description=:description"
+                . " WHERE id=:id";
+        $stmt = DB_library::$conn->prepare($sql);
+        $stmt->bindParam(':id', $customer_id, PDO::PARAM_INT);
+        $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $stmt->bindParam(':mname', $mname, PDO::PARAM_STR);
+        $stmt->bindParam(':lname', $lname, PDO::PARAM_STR);
+        $stmt->bindParam(':address1', $address1, PDO::PARAM_STR);
+        $stmt->bindParam(':address2', $address2, PDO::PARAM_STR);
+        $stmt->bindParam(':city', $city, PDO::PARAM_STR);
+        $stmt->bindParam(':state', $state, PDO::PARAM_STR);
+        $stmt->bindParam(':country', $country, PDO::PARAM_STR);
+        $stmt->bindParam(':pincode', $pincode, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $result = $this->_database->execute_query($stmt);
+        return $result;
     }
 
     public function validate_admin_user($data) {

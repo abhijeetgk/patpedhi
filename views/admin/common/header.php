@@ -24,6 +24,8 @@
   <link href="<?php echo CSS_PATH;?>floatexamples.css" rel="stylesheet" />
 
   <script src="<?php echo JS_PATH;?>jquery.min.js"></script>
+  <script src="<?php echo JS_PATH;?>jquery-ui.js"></script>
+  <link rel="stylesheet" href="<?php echo CSS_PATH;?>jquery-ui.css">
 
   <!--[if lt IE 9]>
         <script src="<?php echo JS_PATH;?>/ie8-responsive-file-warning.js"></script>

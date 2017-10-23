@@ -51,11 +51,38 @@ class CustomerController extends BaseController {
         $this->_set_data();
         $this->view->set_data('identifier', 'customer');
         $this->view->set_data('table_header', 'CUSTOMER');
-        $this->view->set_data('header_fields', array(TABLE_HEADER_ID,TABLE_HEADER_NAME, TABLE_HEADER_ADDRESS1, TABLE_HEADER_ADDRESS2, TABLE_HEADER_CITY,EDIT_BUTTON));
-        $this->view->set_data('edit_url','/ajax/editcustomer');
-        $this->view->set_data('list_url','/ajax/customer');
+        $this->view->set_data('header_fields', array(TABLE_HEADER_ID, TABLE_HEADER_NAME, TABLE_HEADER_ADDRESS1, TABLE_HEADER_ADDRESS2, TABLE_HEADER_CITY, EDIT_BUTTON));
+        $this->view->set_data('edit_url', '/ajax/editcustomer');
+        $this->view->set_data('list_url', '/ajax/customer');
         $this->view->set_data('customer_grid', $this->view->render_return('admin/customer/grid'));
+      
+        
+        if (isset($_SESSION['success']) && $_SESSION['success'] != "") {
+            $this->view->set_data('success_message',$_SESSION['success']);
+            $_SESSION['success']="";
+        }
         $this->view->render("admin/customer/manage");
+    }
+
+    public function edit($customer_id = '') {
+//        session_start();
+        if (!$customer_id && $_POST['customer_id'] == "") {
+            header('Location:' . BASE_URL . "customer/manage");
+        }
+        if (isset($_POST['customer_id'])) {
+            $update_result = $this->user_model->update_customer_by_id($_POST);
+            if ($update_result['row_count'] == 1) {
+                $_SESSION['success'] = "Record updated";
+                $this->registry->set('success',$_SESSION['success']);
+            }
+            putenv("USER=fred");
+            header("Location:" . BASE_URL . "customer/manage");
+        }
+
+        $customer_data = $this->user_model->get_customer_details_by_id($customer_id);
+        $this->view->set_data('customer_data', $customer_data['data'][0]);
+        $this->view->set_data('customer_form', $this->view->render_return('admin/customer/customer_form'));
+        $this->view->render('admin/customer/edit');
     }
 
 }
