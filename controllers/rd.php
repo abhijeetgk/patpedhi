@@ -30,9 +30,16 @@ class RdController extends BaseController {
 
     public function addmaster() {
         $this->_set_data();
-        if(isset($_POST['customer_id']) && $_POST['customer_id']!=""){
-//            $this-
+
+        if (isset($_POST['customer_id']) && $_POST['customer_id'] != "") {
+            $this->rd_model = $this->load->model('rd');
+            $result = $this->rd_model->add_rd_master($_POST);
+            if ($result['last_insert_id'] != "" && $result['row_count'] > 0) {
+                $_SESSION['success'] = RD_RECORD_ADD_SUCCESS;
+                header('Location:'.BASE_URL."rd/report");
+            }
         }
+
         $this->view->set_data('rd_form', $this->view->render_return('admin/rd/form'));
         $this->view->render("admin/rd/index");
     }
@@ -46,6 +53,10 @@ class RdController extends BaseController {
     public function report($rd_id = '') {
         $this->_set_data();
         $this->view->set_data('rd_detailed_link', BASE_URL . "rd/report/");
+        if (isset($_SESSION['success']) && $_SESSION['success'] != "") {
+            $this->view->set_data('success_message', $_SESSION['success']);
+            $_SESSION['success'] = "";
+        }
         if ($rd_id) {
             // customer detailed view
             $this->view->set_data('rd_id', $rd_id);

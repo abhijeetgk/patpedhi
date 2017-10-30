@@ -27,9 +27,20 @@ class User_model extends BaseModel {
         $description = $input['description'];
         if ($fname != "") {
             $this->_database = $this->load->library('DB', $GLOBALS['mysql_config']['conn_write']);
-            $register_sql = "INSERT INTO CUSTOMER_MASTER SET fname=:fname,mname=:mname,lname=:lname,"
-                    . "address1=:address1,address2=:address2,city=:city,state=:state,country=:country,pincode=:pincode,"
-                    . "description=:description,date_added=now(),date_modified=now(),status='y'";
+            $register_sql = "INSERT INTO CUSTOMER_MASTER SET "
+                    . "fname=:fname,"
+                    . "mname=:mname,"
+                    . "lname=:lname,"
+                    . "address1=:address1,"
+                    . "address2=:address2,"
+                    . "city=:city,"
+                    . "state=:state,"
+                    . "country=:country,"
+                    . "pincode=:pincode,"
+                    . "description=:description,"
+                    . "date_added=now(),"
+                    . "date_modified=now(),"
+                    . "status='y'";
             $stmt = DB_library::$conn->prepare($register_sql);
             $stmt->bindParam(":fname", $fname, PDO::PARAM_STR);
             $stmt->bindParam(":mname", $mname, PDO::PARAM_STR);

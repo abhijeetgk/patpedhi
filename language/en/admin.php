@@ -36,5 +36,10 @@ define('TABLE_HEADER_CITY','City');
 define('EDIT_BUTTON','Edit');
 
 /**
+ * Admin RD
+ */
+
+define("RD_RECORD_ADD_SUCCESS","RD record added successfully");
+/**
  * End of file ./language/en/user.php
  */

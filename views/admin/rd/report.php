@@ -36,6 +36,14 @@
             </div>
           </div>
         <br />
+        
+            <?php if (isset($success_message) && $success_message!="") { ?>
+            <div class="alert alert-success" style="clear:both">
+                <strong><?php echo $success_message;?></strong>
+            </div>
+            <br>
+            <?php } ?>
+            <br />
         <?php echo $data['rd_report'];?>
         </div>
        <?php echo $data['footer'];?>
